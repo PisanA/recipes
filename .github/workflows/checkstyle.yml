@@ -9,7 +9,7 @@ on:
       # this workflow will only run if a .java file is pushed.
       - '**.java'
 jobs:
-  build:
+  checkstyle:
     name: Checkstyler
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -29,4 +29,17 @@ jobs:
           # Change reporter level if you need [info,warning,error].
           # GitHub Status Check won't become failure with a warning.
           level: warning
-          workdir: src
+          workdir: src/main
+          
+  misspell:
+    name: misspell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-misspell@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          level: warning
+          locale: "US"
+          path: src/main
