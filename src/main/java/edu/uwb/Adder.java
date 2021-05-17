@@ -1,7 +1,8 @@
 package edu.uwb;
 
-/* Adder is a collecton of methods
-*/
+/**
+ * Adder is a collecton of methods
+ */
 public class Adder {
     public int AddPositiveInts (int a, int b) {
         if ((a < 0) || (b < 0)) { return -1; }
