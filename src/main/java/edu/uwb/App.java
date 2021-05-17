@@ -2,7 +2,7 @@ package edu.uwb;
 
 /**
  * Hello world!
- * This is a simple introducton
+ * This is a simple introduction
  */
 public class App {
     public static void main( String[] args )
