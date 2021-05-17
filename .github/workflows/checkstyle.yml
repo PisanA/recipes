@@ -32,7 +32,7 @@ jobs:
           workdir: src/main
           
   misspell:
-    name: misspell
+    name: Misspell
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
